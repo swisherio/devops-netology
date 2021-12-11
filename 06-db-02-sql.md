@@ -111,6 +111,7 @@ insert into clients VALUES (1, 'Иванов Иван Иванович', 'USA'),
 select count (*) from orders;
 select count (*) from clients;
 ```
+![](https://github.com/swisherio/devops-netology/blob/main/ss_6_3_1.png)
 Задача 4
 
 Часть пользователей из таблицы clients решили оформить заказы из таблицы orders.
@@ -138,7 +139,7 @@ select * from clients as c where  exists (select id from orders as o where c.boo
 Запрос получения Вариант2 - проверяет на непустые значения у клиентов по заказам:
 select * from clients where booking is not null
 ```
-
+![](https://github.com/swisherio/devops-netology/blob/main/ss_6_4_1.png)
 Задача 5
 
 Получите полную информацию по выполнению запроса выдачи всех пользователей из задачи 4 
