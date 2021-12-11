@@ -6,7 +6,7 @@
 Используя docker поднимите инстанс PostgreSQL (версию 12) c 2 volume, в который будут складываться данные БД и бэкапы.
 ```
 Ответ:
-12:17:28 tretyakov@pc(0):~$ docker pull postgres:12
+12:17:28 tretyakov@pc:~$ docker pull postgres:12
 13:00:03 tretyakov@pc:~$ docker volume create vol2
 vol2
 13:00:15 tretyakov@pc:~$ docker volume create vol1
@@ -147,6 +147,16 @@ select * from clients where booking is not null
 
 Приведите получившийся результат и объясните что значат полученные значения.
 
+```
+Вариант 1
+Показывает стоимость(нагрузку на исполнение) запроса (не оптимальный в сравнении с Вар2)
+Показывает шаги связи, и сбор сканирование таблиц после связи
+
+Вариант 2
+Так же показывает стоимость(нагрузку на исполнение) запроса , и фильтрацию по полю Booking для выборки.
+```
+![](https://github.com/swisherio/devops-netology/blob/main/ss_6_5_1.png)
+
 Задача 6
 
 Создайте бэкап БД test_db и поместите его в volume, предназначенный для бэкапов (см. Задачу 1).
@@ -158,3 +168,37 @@ select * from clients where booking is not null
 Восстановите БД test_db в новом контейнере.
 
 Приведите список операций, который вы применяли для бэкапа данных и восстановления. 
+```
+
+17:23:15 tretyakov@pc:~$ docker exec -t pgre-docker pg_dump -U postgres test_db -f /var/lib/postgresql/data/dump_test.sql
+
+17:29:18 tretyakov@pc:~$ docker exec -i pgre-docker2 psql -U postgres -d test_db -f /var/lib/postgresql/data/dump_test.sql
+SET
+SET
+SET
+SET
+SET
+ set_config 
+------------
+ 
+(1 row)
+
+SET
+SET
+SET
+SET
+SET
+SET
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+COPY 5
+COPY 5
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+GRANT
+GRANT
+17:33:29 tretyakov@pc:~$ 
+```
