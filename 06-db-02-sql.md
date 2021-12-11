@@ -73,8 +73,8 @@ GRANT INSERT ON TABLE public.orders TO "test-simple-user";
 GRANT UPDATE ON TABLE public.orders TO "test-simple-user";
 GRANT DELETE ON TABLE public.orders TO "test-simple-user";
 ```
-![](https://)
-![](https://)
+![](https://github.com/swisherio/devops-netology/blob/main/ss_6_2_0.png)
+![](https://github.com/swisherio/devops-netology/blob/main/ss_6_2_1.png)
 ![](https://)
 Задача 3
 Используя SQL синтаксис - наполните таблицы следующими тестовыми данными:
