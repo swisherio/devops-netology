@@ -16,7 +16,7 @@ vol1
 ```
 
 Приведите получившуюся команду или docker-compose манифест.
-![](https://)
+![](https://github.com/swisherio/devops-netology/blob/main/ss_6_1.png)
 
 Задача 2
 В БД из задачи 1:
